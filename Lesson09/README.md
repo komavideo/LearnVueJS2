@@ -24,7 +24,7 @@ http://vuejs-templates.github.io/webpack/
 
 ## 课程文件
 
-https://gitee.com/komavideo/LearnVueJS2
+https://github.com/komavideo/LearnVueJS2
 
 ## 小马视频频道
 
