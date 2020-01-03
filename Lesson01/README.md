@@ -51,8 +51,8 @@ http://komavideo.com/vuejs/index.html
 ## 视频计划
 * 每个视频只包括一个知识点，并控制在5-10分钟之内
 * 原代码共享
-  - Git@OSC  
-    https://gitee.com/komavideo/LearnVueJS2
+  - GitHub  
+    https://github.com/komavideo/LearnVueJS2
 
 ## 小马视频频道
 
