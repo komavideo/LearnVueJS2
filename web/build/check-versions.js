@@ -2,10 +2,18 @@
 const chalk = require('chalk')
 const semver = require('semver')
 const packageConfig = require('../package.json')
-const shell = require('shelljs')
 
 function exec (cmd) {
   return require('child_process').execSync(cmd).toString().trim()
+}
+
+function hasCommand (cmd) {
+  try {
+    exec(`${process.platform === 'win32' ? 'where' : 'command -v'} ${cmd}`)
+    return true
+  } catch (error) {
+    return false
+  }
 }
 
 const versionRequirements = [
@@ -16,7 +24,7 @@ const versionRequirements = [
   }
 ]
 
-if (shell.which('npm')) {
+if (hasCommand('npm')) {
   versionRequirements.push({
     name: 'npm',
     currentVersion: exec('npm --version'),
