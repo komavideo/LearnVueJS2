@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>User</h1>
-    <p>uid={{ safeUid }}, {{ safeNationality }}</p>
+    <p>uid={{ uid }}, {{ nationality }}</p>
   </div>
 </template>
 
@@ -10,20 +10,12 @@ export default {
   name: 'User',
   props: {
     uid: {
-      type: String,
-      default: ''
+      type: Number,
+      required: true
     },
     nationality: {
       type: String,
-      default: ''
-    }
-  },
-  computed: {
-    safeUid () {
-      return /^\d+$/.test(this.uid) ? this.uid : ''
-    },
-    safeNationality () {
-      return /^[a-z-]+$/i.test(this.nationality) ? this.nationality.toLowerCase() : ''
+      required: true
     }
   }
 }

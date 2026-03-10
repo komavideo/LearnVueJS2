@@ -12,12 +12,12 @@ export default new Router({
       name: 'HelloWorld'
     },
     {
-      path: '/user/:uid(\\d+)/:nationality([a-zA-Z-]+)',
+      path: '/user/:uid(\\d+)/:nationality([a-zA-Z]{2,20})',
       name: 'User',
       component: User,
       props: route => ({
-        uid: route.params.uid,
-        nationality: route.params.nationality.toLowerCase()
+        uid: Number(route.params.uid),
+        nationality: (route.params.nationality || '').toLowerCase()
       })
     },
     {
